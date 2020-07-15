@@ -1,22 +1,26 @@
 package ru.startandroid.mvpsample.mvp;
 
 import android.app.ProgressDialog;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
 import ru.startandroid.mvpsample.R;
 import ru.startandroid.mvpsample.common.User;
 import ru.startandroid.mvpsample.common.UserAdapter;
+import ru.startandroid.mvpsample.common.UsersContractView;
 import ru.startandroid.mvpsample.database.DbHelper;
 
-public class UsersActivity extends AppCompatActivity {
+public class UsersActivity
+        extends AppCompatActivity
+        implements UsersContractView {
 
     private UserAdapter userAdapter;
 
@@ -69,6 +73,7 @@ public class UsersActivity extends AppCompatActivity {
         presenter.viewIsReady();
     }
 
+    @Override
     public UserData getUserData() {
         UserData userData = new UserData();
         userData.setName(editTextName.getText().toString());
@@ -76,18 +81,22 @@ public class UsersActivity extends AppCompatActivity {
         return userData;
     }
 
+    @Override
     public void showUsers(List<User> users) {
         userAdapter.setData(users);
     }
 
+    @Override
     public void showToast(int resId) {
         Toast.makeText(this, resId, Toast.LENGTH_SHORT).show();
     }
 
+    @Override
     public void showProgress() {
         progressDialog = ProgressDialog.show(this, "", getString(R.string.please_wait));
     }
 
+    @Override
     public void hideProgress() {
         if (progressDialog != null) {
             progressDialog.dismiss();

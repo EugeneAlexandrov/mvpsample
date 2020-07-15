@@ -4,6 +4,8 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/MVP.iml" filepath="$PROJECT_DIR$/MVP.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/mvpsample.iml" filepath="$PROJECT_DIR$/.idea/modules/mvpsample.iml" group="mvpsample" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/mvpsample-app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/mvpsample-app.iml" group="mvpsample/app" />
     </modules>
   </component>
 </project>

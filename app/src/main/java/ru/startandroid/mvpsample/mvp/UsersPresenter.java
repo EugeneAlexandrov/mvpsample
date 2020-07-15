@@ -8,17 +8,18 @@ import java.util.List;
 import ru.startandroid.mvpsample.R;
 import ru.startandroid.mvpsample.common.User;
 import ru.startandroid.mvpsample.common.UserTable;
+import ru.startandroid.mvpsample.common.UsersContractView;
 
 public class UsersPresenter {
 
-    private UsersActivity view;
+    private UsersContractView view;
     private final UsersModel model;
 
     public UsersPresenter(UsersModel model) {
         this.model = model;
     }
 
-    public void attachView(UsersActivity usersActivity) {
+    public void attachView(UsersContractView usersActivity) {
         view = usersActivity;
     }
 
